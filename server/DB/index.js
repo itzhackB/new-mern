@@ -1,0 +1,14 @@
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const PORT = process.env.PORT || 8080;
+const CONNECTION_URL = process.env.CONNECTION_URL;
+
+mongoose.connect(CONNECTION_URL,
+    {
+        useNewUrlParser:true,
+        useUnifiedTopology:true
+    })
+    .then(()=>{console.log("Database connected...")})
+    .catch(()=>{console.log("We have error connecting")})
+
+    module.exports=mongoose.connection
