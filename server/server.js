@@ -17,7 +17,9 @@ db.on('error',()=>console.log('error'));
 app.listen(PORT,()=>{
     console.log(`Server is up on port: ${PORT}`);
 })
-app.use('/api/users',userRouter)
+app.use('/',(req,res)=>{
+    res.send("its working")
+})
 
 if (process.env.NODE_ENV === 'production') {
     // Serve any static files
