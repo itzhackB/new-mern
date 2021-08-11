@@ -18,7 +18,7 @@ const getUserById = async (req, res) => {
             res.json({ message: "success", data: result })
         })
     } catch (error) {
-        res.json({message:"Database problem", error:error})
+        res.json({ message: "Database problem", error: error })
     }
 }
 
@@ -30,7 +30,7 @@ const createNewUser = async (req, res) => {
             res.json({ message: "success", data: result })
         })
     } catch (error) {
-        res.json({message:"Database problem", error:error})
+        res.json({ message: "Database problem", error: error })
     }
 }
 
@@ -42,23 +42,23 @@ const deleteUser = async (req, res) => {
             res.json({ message: "success", data: result })
         })
     } catch (error) {
-        res.json({message:"Database problem", error:error})
+        res.json({ message: "Database problem", error: error })
     }
 }
 
 
 const updateUser = async (req, res) => {
     try {
-        await UserModel.findByIdAndUpdate(req.params.id,req.body, (err, result) => {
+        await UserModel.findByIdAndUpdate(req.params.id, req.body, (err, result) => {
             if (err) throw err
             res.json({ message: "success", data: req.body })
         })
     } catch (error) {
-        res.json({message:"Database problem", error:error})
+        res.json({ message: "Database problem", error: error })
     }
 }
 
-module.exports={
+module.exports = {
     updateUser,
     deleteUser,
     createNewUser,
