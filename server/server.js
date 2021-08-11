@@ -5,7 +5,7 @@ const db =require('./DB/index')
 const userRoute=require('./routes/routes');
 const path=require('path');
 const userRouter = require('./routes/routes');
-const PORT=process.env.PORT || 8080;
+
 
 const app=express();
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(cors());
 
 db.on('error',()=>console.log('error'));
 
-app.listen(PORT,()=>{
+app.listen(process.env.PORT || 8080,()=>{
     console.log(`Server is up on port: ${PORT}`);
 })
 app.use('/api/users',userRouter)
